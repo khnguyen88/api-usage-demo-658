@@ -1,6 +1,11 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 
+import Button from 'react-bootstrap/Button';
+import Table from 'react-bootstrap/Table';
+
+import '../../App.css';
+
 
 const Joke = () => {
 
@@ -28,18 +33,44 @@ const Joke = () => {
   return (
     <div>
       <h1>Jokes:</h1>
-      
+
       {/* Fetch data from Jokes API */}
-      <button onClick={fetchData}>Retrieve Jokes</button>
+      <div className="button-container">
+        <Button className="joke-button" onClick={fetchData}>Retrieve Jokes</Button>
+        <div className="joke-container"> 
+          {jokes.length > 0 ? (<><b>Newest Joke: </b><span> {jokes && jokes[jokes.length-1]}</span></>) : <><div>Nothing to show, Please retrieve a joke!</div></>}
+        </div>
+      </div>
 
       <div className="jokes-container">
-        {/* Display jokes */}
-        {jokes && jokes.map((j, index) => {
-          return (
-            <div className="joke" key={index}> {j} </div>
-          )
-        })}
+        {jokes.length > 0 ? 
+          <>
+          <h2>Jokes Collection</h2>
+          <Table className="jokes-table" striped bordered hover size="sm">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Jokes</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {/* Display jokes */}
+              {jokes && jokes.map((j, index) => {
+                return (
+                  <>
+                    <tr key={index}>
+                      <td>{index + 1}</td>
+                      <td className="joke"> {j} </td>
+                    </tr>
+                  </>
+                )
+              })}
+            </tbody>
+          </Table>
+        </> : <><div>No collection, yet! Retrieve a joke!</div></>}
       </div>
+      
     </div>
   );
 }
