@@ -58,12 +58,10 @@ const Joke = () => {
               {/* Display jokes */}
               {jokes && jokes.map((j, index) => {
                 return (
-                  <>
                     <tr key={index}>
                       <td>{index + 1}</td>
                       <td className="joke"> {j} </td>
                     </tr>
-                  </>
                 )
               })}
             </tbody>
