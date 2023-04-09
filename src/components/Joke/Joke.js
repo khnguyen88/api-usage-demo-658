@@ -32,11 +32,12 @@ const Joke = () => {
   
   return (
     <div>
-      <h1>Jokes:</h1>
-
+      <div className="title-container">
+        <h1>Dad Jokes</h1>
+      </div>
       {/* Fetch data from Jokes API */}
       <div className="button-container">
-        <Button className="joke-button" onClick={fetchData}>Retrieve Jokes</Button>
+        <Button className="joke-button" onClick={fetchData} variant='success'>Retrieve A Joke</Button>
         <div className="joke-container"> 
           {jokes.length > 0 ? (<><b>Newest Joke: </b><span> {jokes && jokes[jokes.length-1]}</span></>) : <><div>Nothing to show, Please retrieve a joke!</div></>}
         </div>
