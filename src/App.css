@@ -1,8 +1,10 @@
 .App {
   text-align: center;
+  min-height: 100vh;
+  overflow: auto;
 }
 
-.App-logo {
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -11,9 +13,9 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
+} */
 
-.App-header {
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -22,23 +24,57 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
 
-.App-link {
+/* .App-link {
   color: #61dafb;
-}
+} */
 
-@keyframes App-logo-spin {
+/* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
+} */
+
+
+/* App CSS */
+.app-header {
+  background-color: #104d22;
+  height: 3em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  color: white;
+}
+
+.app-main{
+  min-height: calc(100vh - 12em);
+  background-color: #fddd9e;
+}
+
+.app-footer {
+  background-color: #104d22;
+  height: 3em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  color: white;
+}
+
+/* Jokes CSS */
+.title-container {
+  padding-top: 2em;
 }
 
 .button-container{
-  margin-top: 2em;
+  padding-top: 1em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,13 +86,32 @@
 }
 
 .jokes-container {
-    margin-top: 3em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  margin-top: 3em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 3em;
 }
 
 .jokes-table {
   width: 90vw;
+  border-color: #111;
+}
+
+thead{
+  background-color: #dbc08b;
+  font-size: 1.25rem;
+}
+
+/* Table row colors, stripped */
+/* Reference: https: //stackoverflow.com/questions/74106487/i-want-to-make-striped-color-table-in-react-js-i-use-map-function */
+tbody tr:nth-child(odd) {
+  background-color: #f2ce62;
+  color: #111;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #dbc08b;
+  color: #111;
 }
